@@ -65,6 +65,7 @@
                     </table>
                 </div>
             </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertArticle" data-whatever="@mdo">Open modal for @mdo</button>
         
     </body>
 </html>

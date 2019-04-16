@@ -15,19 +15,19 @@
                 
             </div>
             <div class="col-sm-4">
-                <form>
+                <form action="login">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <label for="nom">Email address</label>
+                        <input type="email" class="form-control" id="nom" aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
                     </div>
                     <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <input type="checkbox" class="form-check-input" id="check">
+                        <label class="form-check-label" for="check">Check me out</label>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
