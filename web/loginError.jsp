@@ -12,6 +12,15 @@
     <body>
         <div class="row">
             <div class="col-sm-3">
+           
+            </div>
+         <div class="col-sm-4 alert-danger ">
+             Vous n’êtes pas un utilisateur valide!
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+               
             </div>
             <div class="col-sm-4">
                 <form action="login" type="post">

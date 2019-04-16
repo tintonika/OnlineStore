@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 public class connectionDB {
         public static Connection createConnection()  {
         Connection con = null;
-      String url = "jdbc:mysql://localhost:3306/tatianna"; 
+      String url = "jdbc:mysql://localhost:3306/onlinestore"; 
       String username = "root"; //MySQL username
       String password = ""; //MySQL password
 

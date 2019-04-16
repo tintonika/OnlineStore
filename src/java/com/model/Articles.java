@@ -1,6 +1,7 @@
 
 package com.model;
 
+import java.util.Objects;
 
 public class Articles {
     private int ID;
@@ -23,7 +24,7 @@ public class Articles {
         this.PHOTO=Photo;
     }
     
-        public Articles(int ID, String Nom, String NameCategory, int PRICE, int QTY, String Photo, int Activ ){
+    public Articles(int ID, String Nom, String NameCategory, int PRICE, int QTY, String Photo, int Activ ){
         this.ID = ID;
         this.Name = Nom;
         this.NameCategory = NameCategory;
@@ -89,6 +90,32 @@ public class Articles {
 
     public void setPHOTO(String PHOTO) {
         this.PHOTO = PHOTO;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 67 * hash + this.ID;
+        hash = 67 * hash + Objects.hashCode(this.Name);
+        hash = 67 * hash + this.ID_CATEGORY;
+        hash = 67 * hash + this.PRICE;
+        hash = 67 * hash + this.QTY;
+        hash = 67 * hash + this.ACTIVE;
+        hash = 67 * hash + Objects.hashCode(this.PHOTO);
+        hash = 67 * hash + Objects.hashCode(this.NameCategory);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Articles other = (Articles) obj;
+        return true;
     }
 
     @Override

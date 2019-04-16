@@ -1,16 +1,20 @@
-<%-- 
-    Document   : adminPanel
-    Created on : 15 avr. 2019, 14:58:42
-    Author     : Rick
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import ="java.util.ArrayList" %>
+<%@page import ="com.model.Articles" %>
+<%@page import ="com.controller.Articles" %>
+  
+<%  
+  ArrayList<Articles> listArticle = (ArrayList)request.getAttribute("ARTICLE");
+  
+%>
+
  <jsp:include page="head.jsp" />
 <!DOCTYPE html>
 <html>
     <body>
         <jsp:include page="navPanel.jsp" />
-        <div clas
+    
         <div class="col-12 pt-3 mx-auto">
             Welcome to the Admin Panel!
         </div>
@@ -37,30 +41,19 @@
                             </tr>
                         </thead>
                         <tbody>
+                         <%
+                            for (Articles article : listArticle) {
+                          %>   
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <th scope="row"></th>
+                                <td><%= article.getPHOTO()%></td>
+                                <td><%= article.getName()%></td>
+                                <td><%= article.getQTY()%></td>
+                                <td><%= article.getPRICE()%></td>
+                                <td><i class="far fa-file"></i><i class="far fa-edit"></i><i class="far fa-trash-alt"></i></td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+                             <% }
+                              %>
                         </tbody>
                     </table>
                 </div>

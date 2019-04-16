@@ -2,7 +2,7 @@
 package com.model;
 
 
-public class Users {
+public class Login {
     
     private int ID;
     private String Login;
@@ -11,7 +11,7 @@ public class Users {
     private String Adresse;
     private int Telephone;
 
-    public Users(int ID, String Login, String Password, String Name, String Adresse, int Telephone) {
+    public Login(int ID, String Login, String Password, String Name, String Adresse, int Telephone) {
         this.ID = ID;
         this.Login = Login;
         this.Password = Password;

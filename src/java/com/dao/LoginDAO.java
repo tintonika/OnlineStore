@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package com.dao;
 
 import com.connection.connectionDB;
 import java.sql.Connection;
@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class LoginDAO {
    public boolean verification(String nom, String pass) throws SQLException {
         boolean result = false;
-        String MDP = null;
+        String psw = null;
         PreparedStatement preparedStatement = null;
         Connection con = null;
         
@@ -27,38 +27,32 @@ public class LoginDAO {
 //        }
         try {
         con = connectionDB.createConnection();
-        String query = "SELECT Login from user WHERE Login = '"+ nom +"'";
+        String query = "SELECT Password from user WHERE Login = '"+ nom +"'";
         preparedStatement = con.prepareStatement(query); 
 
         ResultSet rs = preparedStatement.executeQuery();
          
         while (rs.next()) {
-                MDP = rs.getString("MDP");
+               psw = rs.getString("PASSWORD");
         }
-        
-        //String MDP = rs.getString("MDP");
-               
-       
-        if (MDP.equals(pass))
-               result = true;     
-        
+        if(psw!=null){
+            if (psw.equals(pass))
+                   result = true;
+        }
         } catch (SQLException e) {
 
             System.out.println(e.getMessage());
 
         }
-            finally {
+        finally {
 
             if (preparedStatement != null) {
                 preparedStatement.close();
             }
-
             if (con != null) {
                 con.close();
             }
-
         }
         return result;
-        }
-         
+        }         
 }
