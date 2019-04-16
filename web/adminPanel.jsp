@@ -2,7 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import ="java.util.ArrayList" %>
 <%@page import ="com.model.Articles" %>
-<%@page import ="com.controller.Articles" %>
+
   
 <%  
   ArrayList<Articles> listArticle = (ArrayList)request.getAttribute("ARTICLE");
