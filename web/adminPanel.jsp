@@ -23,10 +23,31 @@
                  Administrator Panel 
               </div>
               <div class="col-sm">
-                <button type="button" class="btn btn-primary btn-sm">Add new article</button>
+                <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#insertModal">Add new article</button>
+                <!-- Modal -->
+                <div class="modal fade" id="insertModal" tabindex="-1" role="dialog" aria-labelledby="insertModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="insertModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
         </div>
+        
         <div class="mainContainer">
             <div class="row">
                 <div class="col-sm-2 ">
@@ -41,11 +62,13 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col"></th>
                                 <th scope="col">Photo</th>
                                 <th scope="col">Title</th>
+                                <th scope="col">Category</th>
                                 <th scope="col">Qty</th>
                                 <th scope="col">Price</th>
+                                <th scope="col">Active</th>
                                 <th scope="col">* * *</th>
                             </tr>
                         </thead>
@@ -60,9 +83,19 @@
                                     <img alt="no image" src="img/<%= article.getPHOTO()%>" height="70" width="60"/>
                                 </td>
                                 <td><%= article.getName()%></td>
+                                <td><%= article.getNameCategory()%></td>
                                 <td><%= article.getQTY()%></td>
                                 <td><%= article.getPRICE()%></td>
-                                <td><i class="far fa-file"></i><i class="far fa-edit"></i><i class="far fa-trash-alt"></i></td>
+                                 <%
+                                 String active;
+                                    if(article.getACTIVE()==1){
+                                        active="Active";
+                                    }else{
+                                        active="No active";
+                                    }
+                                  %> 
+                                <td><%= active%></td>
+                                <td><i class="far fa-edit">&nbsp;&nbsp;&nbsp;</i><i class="far fa-trash-alt"></i></td>
                             </tr>
                              <% }}
                               %>
@@ -72,5 +105,14 @@
             </div>
        
         </div> <!--mainContainer-->
+        <script>
+            $(document).ready(function(){
+              //при нажатию на любую кнопку, имеющую класс .btn
+              $(".btn").click(function() {
+                //открыть модальное окно с id="myModal"
+                $("#insertModal").modal('show');
+              });
+            });
+        </script>
     </body>
 </html>
