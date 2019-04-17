@@ -23,27 +23,9 @@
                  Administrator Panel 
               </div>
               <div class="col-sm">
-                <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#insertModal">Add new article</button>
-                <!-- Modal -->
-                <div class="modal fade" id="insertModal" tabindex="-1" role="dialog" aria-labelledby="insertModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="insertModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        ...
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  <a href="/insertArticle.jsp" type="button" class="btn btn-primary btn-sm float-right" >
+                    Add new article
+                </a>
               </div>
             </div>
         </div>
@@ -105,14 +87,5 @@
             </div>
        
         </div> <!--mainContainer-->
-        <script>
-            $(document).ready(function(){
-              //при нажатию на любую кнопку, имеющую класс .btn
-              $(".btn").click(function() {
-                //открыть модальное окно с id="myModal"
-                $("#insertModal").modal('show');
-              });
-            });
-        </script>
     </body>
 </html>
