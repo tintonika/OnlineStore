@@ -2,10 +2,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import ="java.util.ArrayList" %>
 <%@page import ="com.model.Articles" %>
-
+<%@page import ="com.controller.AdminArticle" %>
+  
   
 <%  
-  ArrayList<Articles> listArticle = (ArrayList)request.getAttribute("ARTICLE");
+  ArrayList<Articles> listArticle = (ArrayList)request.getAttribute(AdminArticle.CLE_DONNEE);
   
 %>
 
@@ -14,11 +15,17 @@
 <html>
     <body>
         <jsp:include page="navPanel.jsp" />
-    
-        <div class="col-12 pt-3 mx-auto">
+    <div class="row block-inline">
+        <div class="col-12 pt-3 ">
+            ***
+        </div>
+        <div class="col-12 pt-6 float-centre">
             Welcome to the Admin Panel!
         </div>
-    
+        <div class="col-12 pt-3 ">
+            <button type="button" class="btn btn-success">Success</button>
+        </div>
+    </div>
             <div class="row">
                 <div class="col-sm-2 ">
                     <div class="list-group" id="list-tab" role="tablist">
@@ -42,6 +49,7 @@
                         </thead>
                         <tbody>
                          <%
+                            if(listArticle!=null){
                             for (Articles article : listArticle) {
                           %>   
                             <tr>
@@ -52,13 +60,13 @@
                                 <td><%= article.getPRICE()%></td>
                                 <td><i class="far fa-file"></i><i class="far fa-edit"></i><i class="far fa-trash-alt"></i></td>
                             </tr>
-                             <% }
+                             <% }}
                               %>
                         </tbody>
                     </table>
                 </div>
             </div>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertArticle" data-whatever="@mdo">Open modal for @mdo</button>
+       
         
     </body>
 </html>

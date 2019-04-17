@@ -106,6 +106,14 @@ public class Articles {
         return hash;
     }
 
+    public String getNameCategory() {
+        return NameCategory;
+    }
+
+    public void setNameCategory(String NameCategory) {
+        this.NameCategory = NameCategory;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
