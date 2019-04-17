@@ -2,11 +2,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import ="java.util.ArrayList" %>
 <%@page import ="com.model.Articles" %>
-<%@page import ="com.controller.AdminArticle" %>
+<%@page import ="com.controller.Login" %>
   
   
 <%  
-  ArrayList<Articles> listArticle = (ArrayList)request.getAttribute(AdminArticle.CLE_DONNEE);
+  ArrayList<Articles> listArticle = (ArrayList)request.getAttribute(Login.CLE_DONNEE);
   
 %>
 
@@ -15,17 +15,19 @@
 <html>
     <body>
         <jsp:include page="navPanel.jsp" />
-    <div class="row block-inline">
-        <div class="col-12 pt-3 ">
-            ***
+        <div class="container">
+            <div class="row">
+              <div class="col-sm">
+              </div>
+              <div class="col-sm">
+                 Administrator Panel 
+              </div>
+              <div class="col-sm">
+                <button type="button" class="btn btn-primary btn-sm">Add new article</button>
+              </div>
+            </div>
         </div>
-        <div class="col-12 pt-6 float-centre">
-            Welcome to the Admin Panel!
-        </div>
-        <div class="col-12 pt-3 ">
-            <button type="button" class="btn btn-success">Success</button>
-        </div>
-    </div>
+        <div class="mainContainer">
             <div class="row">
                 <div class="col-sm-2 ">
                     <div class="list-group" id="list-tab" role="tablist">
@@ -54,7 +56,9 @@
                           %>   
                             <tr>
                                 <th scope="row"></th>
-                                <td><%= article.getPHOTO()%></td>
+                                <td>
+                                    <img alt="no image" src="img/<%= article.getPHOTO()%>" height="70" width="60"/>
+                                </td>
                                 <td><%= article.getName()%></td>
                                 <td><%= article.getQTY()%></td>
                                 <td><%= article.getPRICE()%></td>
@@ -67,6 +71,6 @@
                 </div>
             </div>
        
-        
+        </div> <!--mainContainer-->
     </body>
 </html>

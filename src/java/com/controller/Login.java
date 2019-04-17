@@ -5,6 +5,7 @@
  */
 package com.controller;
 
+import com.dao.ArticleDAO;
 import com.dao.LoginDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,10 +18,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class Login extends HttpServlet {
-
+    public static String CLE_DONNEE="to-to";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        
         try (PrintWriter out = response.getWriter()) {
               String nom = request.getParameter("nom");
         String password = request.getParameter("password");
@@ -34,6 +36,9 @@ public class Login extends HttpServlet {
    //         out.println("******"+s1);
     //        request.getRequestDispatcher("adminPanel.jsp").include(request,response);
             if(res){
+                 if (ArticleDAO.ArticlesAll()!=null) {
+                request.setAttribute(CLE_DONNEE, ArticleDAO.ArticlesAll());   
+                }
                 request.getRequestDispatcher("adminPanel.jsp").forward(request,response);
             }else{
                 request.getRequestDispatcher("loginError.jsp").include(request,response); 
