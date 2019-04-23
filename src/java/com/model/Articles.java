@@ -7,14 +7,18 @@ public class Articles {
     private int ID;
     private String Name;
     private int ID_CATEGORY;
-    private int PRICE;
+    private double PRICE;
     private int QTY;
     private int ACTIVE;
     private String PHOTO;
     private String NameCategory;
 
 
-    public Articles(int ID, String Nom, int ID_CATEGORY, int PRICE, int QTY, int ACTIVE, String Photo ){
+    public Articles() {
+    }
+
+
+    public Articles(int ID, String Nom, int ID_CATEGORY, double PRICE, int QTY, int ACTIVE, String Photo ){
         this.ID = ID;
         this.Name = Nom;
         this.ID_CATEGORY = ID_CATEGORY;
@@ -24,7 +28,25 @@ public class Articles {
         this.PHOTO=Photo;
     }
     
-    public Articles(int ID, String Nom, String NameCategory, int PRICE, int QTY, String Photo, int Activ ){
+        public Articles(String Nom, int ID_CATEGORY, double PRICE, int QTY, int ACTIVE, String Photo ){        
+        this.Name = Nom;
+        this.ID_CATEGORY = ID_CATEGORY;
+        this.PRICE = PRICE;
+        this.QTY = QTY;
+        this.ACTIVE=ACTIVE;
+        this.PHOTO=Photo;
+    }
+    
+    public Articles(int ID, String Nom, String NameCategory, double PRICE, int QTY, String Photo, int Activ ){
+        this.ID = ID;
+        this.Name = Nom;
+        this.NameCategory = NameCategory;
+        this.PRICE = PRICE;
+        this.QTY = QTY;        
+        this.PHOTO=Photo;
+        this.ACTIVE=Activ;
+    }
+       public Articles( String Nom, String NameCategory, double PRICE, int QTY, String Photo, int Activ ){
         this.ID = ID;
         this.Name = Nom;
         this.NameCategory = NameCategory;
@@ -58,11 +80,11 @@ public class Articles {
         this.ID_CATEGORY = ID_CATEGORY;
     }
 
-    public int getPRICE() {
+    public double getPRICE() {
         return PRICE;
     }
 
-    public void setPRICE(int PRICE) {
+    public void setPRICE(double PRICE) {
         this.PRICE = PRICE;
     }
 
@@ -92,19 +114,7 @@ public class Articles {
         this.PHOTO = PHOTO;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 67 * hash + this.ID;
-        hash = 67 * hash + Objects.hashCode(this.Name);
-        hash = 67 * hash + this.ID_CATEGORY;
-        hash = 67 * hash + this.PRICE;
-        hash = 67 * hash + this.QTY;
-        hash = 67 * hash + this.ACTIVE;
-        hash = 67 * hash + Objects.hashCode(this.PHOTO);
-        hash = 67 * hash + Objects.hashCode(this.NameCategory);
-        return hash;
-    }
+   
 
     public String getNameCategory() {
         return NameCategory;

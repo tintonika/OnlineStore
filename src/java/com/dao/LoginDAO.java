@@ -22,9 +22,6 @@ public class LoginDAO {
         PreparedStatement preparedStatement = null;
         Connection con = null;
         
-//        if(nom == null || pass==null){
-//            return false;
-//        }
         try {
         con = connectionDB.createConnection();
         String query = "SELECT Password from admins WHERE Login = '"+ nom +"'";
