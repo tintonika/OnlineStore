@@ -1,13 +1,12 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import ="java.util.ArrayList" %>
 <%@page import ="com.model.Articles" %>
 <%@page import ="com.controller.Login" %>
-  
+<%@page import ="com.controller.AdminArticle" %>
   
 <%  
   ArrayList<Articles> listArticle = (ArrayList)request.getAttribute(Login.CLE_DONNEE);
-  
+   
 %>
 
  <jsp:include page="head.jsp" />
@@ -61,6 +60,7 @@
                           %>   
                             <tr>
                                 <th scope="row"></th>
+                                
                                 <td>
                                     <img alt="no image" src="img/<%= article.getPHOTO()%>" height="70" width="60"/>
                                 </td>
@@ -77,10 +77,15 @@
                                     }
                                   %> 
                                 <td><%= active%></td>
-                                <td><i class="far fa-edit">&nbsp;&nbsp;&nbsp;</i><i class="far fa-trash-alt"></i></td>
+                                <td><a href="/updateArticle.jsp?Id_Art=<%= article.getID()%>"> <i class="far fa-edit">&nbsp;&nbsp;&nbsp;</i></a>
+                                    <a href="deleteArticle?Id_Art=<%= article.getID()%>" > <i class="far fa-trash-alt"></i></a></td>   
+                                <td><input type="hidden" name="Artid" value="<%=article.getID()%>"></td>
+                                
+                                
                             </tr>
                              <% }}
                               %>
+
                         </tbody>
                     </table>
                 </div>

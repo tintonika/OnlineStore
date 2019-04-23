@@ -10,11 +10,11 @@
                 
             </div>
             <div class="col-8">
-               <form>
+                <form action="insertArticle" type="POST">
                    <div class="form">
                        <div class="form-group mb-2 w-50">
                             <label for="title">Title&nbsp;&nbsp;&nbsp;</label>
-                            <input type="text" class="form-control" id="title" >
+                            <input type="text" class="form-control" id="title" name="name">
                         </div>
                    </div>
                     <div class="form-inline">
@@ -33,7 +33,7 @@
                     <div class="form">
                         <div class="form-group mb-2">
                             <label for="selectCategory">Category</label>
-                            <select class="form-control w-50" name="category" id="selectCategory">
+                            <select class="form-control w-50" name="id_category" id="selectCategory">
                                     <option value="3">Bells</option>
                                     <option value="2">Candleholde</option>
                                     <option value="1">Mugs</option>
@@ -43,15 +43,27 @@
                         
                         <div class="form-group-inline mb-2">
                             <label for="file">Choose Photo</label>
-                            <input type="file" class="form-control-file" id="file">
+                            <input type="file" class="form-control-file" id="file" name="photo">
                         </div><br/>
                         <div class="form-check mb-2">
-                            <input class="form-check-input" type="checkbox" id="Checkbox" value="check">
-                            <label class="form-check-label" for="Checkbox">Active</label>
+                            <input class="form-check-input" type="checkbox" name="active" value="1" id="Checkbox" checked>
+                            <label class="form-check-label" for="Checkbox" >Active</label>
                          </div>
                     </div><br/>
-                    <button type="submit" class="btn btn-primary mb-2">Confirm</button>
+                     <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <td>
+                    <button type="submit" class="btn btn-primary mb-2">Save</button>
+                     </form> 
+                </td>
+                <td>
+                  <form action="adminPanel.jsp" type="POST">               
+                    <button type="submit" class="btn btn-info mb-2">Back</button>
                 </form> 
+                </table>
+                </form> 
+                
             </div>
             
         </div>
