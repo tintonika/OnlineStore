@@ -27,7 +27,7 @@ public class LoginDAO {
 //        }
         try {
         con = connectionDB.createConnection();
-        String query = "SELECT Password from user WHERE Login = '"+ nom +"'";
+        String query = "SELECT Password from admins WHERE Login = '"+ nom +"'";
         preparedStatement = con.prepareStatement(query); 
 
         ResultSet rs = preparedStatement.executeQuery();
