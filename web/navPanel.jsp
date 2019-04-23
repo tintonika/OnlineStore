@@ -6,18 +6,11 @@
     </div>
     <div class="col-8">
         <ul class="nav justify-content-end pt-5">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Active</a>
+          
+           <li class="nav-item">
+                <a class="nav-link" href="logOut">Logout</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
+           
          </ul>  
   
     </div>
