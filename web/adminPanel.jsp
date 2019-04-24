@@ -5,7 +5,7 @@
 <%@page import ="com.controller.AdminArticle" %>
   
 <%  
-  ArrayList<Articles> listArticle = (ArrayList)request.getAttribute(Login.CLE_DONNEE);
+   ArrayList<Articles> listArticle = (ArrayList)request.getAttribute(Login.CLE_DONNEE);
    
 %>
 
